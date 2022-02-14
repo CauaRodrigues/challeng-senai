@@ -1,0 +1,54 @@
+section.form {
+  height: 55vh;
+  width: 60%;
+  border: 2px solid red;
+  padding: 23px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  .form-hero {
+    text-align: center;
+    margin: 23px 0;
+
+    h1 {
+      font-size: 32px;
+      margin: 5px;
+    }
+
+    h2 {
+      font-size: 20px;
+      font-weight: 400;
+      margin: 5px;
+    }
+  }
+
+  .fieldset {
+    border: 2px solid green;
+    width: 100%;
+    min-height: 15vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+    h3 {
+      font-size: 1.6em;
+      font-weight: 500;
+      margin: 5px;
+    }
+
+    .fields {
+      margin: 0 auto;
+      border: 3px solid yellow;
+
+      .field {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
+  }
+}

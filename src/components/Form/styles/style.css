@@ -1,0 +1,81 @@
+section.form {
+  height: 55vh;
+  width: 60%;
+  border: 2px solid red;
+  padding: 23px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+section.form .form-hero {
+  text-align: center;
+  margin: 23px 0;
+}
+
+section.form .form-hero h1 {
+  font-size: 32px;
+  margin: 5px;
+}
+
+section.form .form-hero h2 {
+  font-size: 20px;
+  font-weight: 400;
+  margin: 5px;
+}
+
+section.form .fieldset {
+  border: 2px solid green;
+  width: 100%;
+  min-height: 15vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+section.form .fieldset h3 {
+  font-size: 1.6em;
+  font-weight: 500;
+  margin: 5px;
+}
+
+section.form .fieldset .fields {
+  margin: 0 auto;
+  border: 3px solid yellow;
+}
+
+section.form .fieldset .fields .field {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+/*# sourceMappingURL=style.css.map */
