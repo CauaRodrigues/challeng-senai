@@ -1,8 +1,8 @@
 section.form {
-  height: 55vh;
-  width: 60%;
-  border: 2px solid red;
+  height: 600px;
+  width: 40%;
   padding: 23px;
+  border-radius: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -10,21 +10,43 @@ section.form {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  background-color: #111827;
+  -webkit-box-shadow: 16px 16px 6px 1px rgba(0, 0, 0, 0.1);
+          box-shadow: 16px 16px 6px 1px rgba(0, 0, 0, 0.1);
 }
 
 section.form .form-hero {
+  height: 120px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   text-align: center;
-  margin: 23px 0;
+  color: #edf2f7;
+}
+
+section.form .form-hero img {
+  height: 55px;
+  width: 150px;
 }
 
 section.form .form-hero h1 {
-  font-size: 32px;
+  font-size: 50px;
+  font-weight: 400;
   margin: 5px;
 }
 
@@ -32,12 +54,11 @@ section.form .form-hero h2 {
   font-size: 20px;
   font-weight: 400;
   margin: 5px;
+  text-transform: uppercase;
 }
 
 section.form .fieldset {
-  border: 2px solid green;
   width: 100%;
-  min-height: 15vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -52,15 +73,21 @@ section.form .fieldset {
       justify-content: space-around;
 }
 
-section.form .fieldset h3 {
-  font-size: 1.6em;
-  font-weight: 500;
-  margin: 5px;
-}
-
 section.form .fieldset .fields {
-  margin: 0 auto;
-  border: 3px solid yellow;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
 }
 
 section.form .fieldset .fields .field {
@@ -77,5 +104,75 @@ section.form .fieldset .fields .field {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  margin: 16px;
+  width: 100%;
+}
+
+section.form .fieldset .container-btn {
+  width: 100%;
+  margin: 23px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+section.form .fieldset .container-btn button {
+  width: 60%;
+  height: 50px;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #111827;
+  background-color: #7582eb;
+  border: none;
+  border-radius: 18px;
+  cursor: pointer;
+}
+
+section.form .fieldset .container-btn button:hover {
+  background-color: #515ba4;
+}
+
+section.form .footer-form {
+  width: 95%;
+}
+
+section.form .footer-form .line {
+  border-color: #A0AEC0;
+  margin-bottom: 16px;
+}
+
+section.form .footer-form p {
+  color: #A0AEC0;
+  cursor: pointer;
+}
+
+section.form .footer-form p:hover {
+  text-decoration: underline;
+  color: #7582eb;
+}
+
+@media screen and (max-width: 800px) {
+  section.form {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  section.form {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  section.form {
+    width: 100%;
+    border-radius: 0;
+  }
 }
 /*# sourceMappingURL=style.css.map */

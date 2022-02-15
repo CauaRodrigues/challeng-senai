@@ -1,13 +1,13 @@
 import React from "react";
-import LoginArea from "../../components/LoginArea";
-import './styles/style.scss';
+import Form from "../../components/Form";
+import "./styles/style.scss";
 
 const Login = () => {
-  return (
-    <main className="container-main-login">
-      <LoginArea />
-    </main>
-  );
+	return (
+		<main className="container-main-login">
+			<Form />
+		</main>
+	);
 };
 
 export default Login;
