@@ -10,7 +10,7 @@ section.form {
 	align-items: center;
 
 	background-color: #111827;
-	box-shadow: 16px 16px 6px 1px rgba(0, 0, 0, .1);
+	box-shadow: 16px 16px 6px 1px rgba(0, 0, 0, 0.1);
 
 	.form-hero {
 		height: 120px;
@@ -88,7 +88,7 @@ section.form {
 				border-radius: 18px;
 				cursor: pointer;
 
-				&:hover{
+				&:hover {
 					background-color: rgb(81, 91, 164);
 				}
 			}
@@ -99,22 +99,22 @@ section.form {
 		width: 95%;
 
 		.line {
-			border-color: #A0AEC0;
+			border-color: #a0aec0;
 			margin-bottom: 16px;
 		}
-		
-		p{
-			color: #A0AEC0;
+
+		p {
+			color: #a0aec0;
 			cursor: pointer;
 
-			&:hover{
+			&:hover {
 				text-decoration: underline;
 				color: #7582eb;
 			}
 		}
 	}
 
-	@media screen and (max-width: 800px) {
+	@media screen and (max-width: 1291px) {
 		width: 80%;
 	}
 
