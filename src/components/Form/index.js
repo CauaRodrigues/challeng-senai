@@ -39,9 +39,12 @@ const Form = () => {
 	const [username, setUsername] = useState("");
 	const [password, setPassword] = useState("");
 
-	const submit = () => {
-		if (!username) {
-			console.log("Campo email vazio");
+	const submit = (e) => {
+		if (!username || !password) {
+			console.log("Preencha os campos");
+		} else {
+			e.preventDefault();
+			navigate(`/admin/${username}`);
 		}
 	};
 
@@ -53,15 +56,16 @@ const Form = () => {
 				<h2>Faça seu login e conheça as novidades</h2>
 			</div>
 
-			<div className="fieldset">
+			<form onSubmit={submit} className="fieldset">
 				<div className="fields">
 					<div className="field">
 						<Fields
 							fullWidth
+							autoComplete="off"
 							id="outlined-basic"
-							label="E-mail"
+							label="Usuário"
 							variant="outlined"
-							type="email"
+							type="text"
 							onChange={(event) => {
 								setUsername(event.target.value);
 							}}
@@ -82,11 +86,9 @@ const Form = () => {
 				</div>
 
 				<div className="container-btn">
-					<button type="button" onClick={submit}>
-						Entrar
-					</button>
+					<button type="submit">Entrar</button>
 				</div>
-			</div>
+			</form>
 
 			<div className="footer-form">
 				<hr className="line" />
