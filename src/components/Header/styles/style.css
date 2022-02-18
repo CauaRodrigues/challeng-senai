@@ -50,7 +50,6 @@ header.container .icons img {
 
 .propper-profile {
   width: 320px;
-  height: 230px;
   padding: 12px;
   background-color: #111827;
   display: -webkit-box;
@@ -105,12 +104,20 @@ header.container .icons img {
           flex-direction: column;
 }
 
+.propper-profile .options a {
+  text-decoration: none;
+}
+
 .propper-profile .options p {
   color: #edf2f7;
   margin-left: 15px;
 }
 
-.propper-profile .logout p {
+.propper-profile .logout a {
+  text-decoration: none;
+}
+
+.propper-profile .logout a p {
   color: #edf2f7;
   margin-left: 15px;
 }

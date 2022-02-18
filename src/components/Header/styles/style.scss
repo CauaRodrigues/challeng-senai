@@ -36,7 +36,6 @@ header.container {
 
 .propper-profile {
   width: 320px;
-  height: 230px;
   padding: 12px;
   background-color: #111827;
   display: flex;
@@ -70,14 +69,22 @@ header.container {
     display: flex;
     flex-direction: column;
 
+    a {
+      text-decoration: none;
+    }
+
     p {
       color: #edf2f7;
       margin-left: 15px;
     }
   }
 
-  .logout p {
-    color: #edf2f7;
-    margin-left: 15px;
+  .logout a {
+    text-decoration: none;
+
+    p {
+      color: #edf2f7;
+      margin-left: 15px;
+    }
   }
 }
