@@ -1,11 +1,28 @@
 import React from "react";
+import { useParams } from "react-router-dom";
 import SearchIcon from "@mui/icons-material/Search";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import "./styles/style.css";
 import { Button, IconButton } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import Popper from "@mui/material/Popper";
+import { Avatar } from "@mui/material";
+import SettingsIcon from "@mui/icons-material/Settings";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import LogoutIcon from "@mui/icons-material/Logout";
 
 const Header = () => {
+	const { username } = useParams();
+
+	const [anchorEl, setAnchorEl] = React.useState(null);
+
+	const handleClick = (event) => {
+		setAnchorEl(anchorEl ? null : event.currentTarget);
+	};
+
+	const open = Boolean(anchorEl);
+	const id = open ? "simple-popper" : undefined;
+
 	const colorIconButton = createTheme({
 		palette: {
 			primary: {
@@ -30,11 +47,53 @@ const Header = () => {
 					<IconButton>
 						<NotificationsIcon color="primary" />
 					</IconButton>
-				</ThemeProvider>
 
-				<Button>
-					<img src={profileIcon} alt="profile image" />
-				</Button>
+					<Button aria-describedby={id} onClick={handleClick}>
+						<img src={profileIcon} alt="Imagem user" />
+					</Button>
+					<Popper id={id} open={open} anchorEl={anchorEl}>
+						<div className="propper-profile">
+							<div className="profile">
+								<Avatar
+									alt="Profile image"
+									src={profileIcon}
+									sx={{ width: 56, height: 56 }}
+								/>
+
+								<div className="info-account">
+									<p>{username}</p>
+									<p className="smaller">Acme Inc.</p>
+								</div>
+							</div>
+
+							<div className="options">
+								<div>
+									<Button>
+										<AccountCircleIcon color="primary" />
+										<p>Perfil</p>
+									</Button>
+								</div>
+
+								<div>
+									<Button>
+										<SettingsIcon color="primary" />
+										<p>Configurações</p>
+									</Button>
+								</div>
+							</div>
+
+							<div className="logout">
+								<div>
+									<Button>
+										<LogoutIcon />
+
+										<p>Sair</p>
+									</Button>
+								</div>
+							</div>
+						</div>
+					</Popper>
+				</ThemeProvider>
 			</div>
 		</header>
 	);

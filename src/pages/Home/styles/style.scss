@@ -17,10 +17,12 @@ article.container-main {
 
 section.content-top {
 	flex-wrap: wrap;
-	justify-content: space-between;
+	justify-content: start;
 	align-items: center;
 
 	h2 {
+		text-align: center;
+		word-spacing: 3px;
 		font-size: 35px;
 		font-weight: 400;
 
@@ -28,32 +30,16 @@ section.content-top {
 			color: #7582eb;
 		}
 	}
-
-	.container-btn-navs {
-		width: 40%;
-
-		display: flex;
-		flex-direction: row;
-		flex-wrap: wrap;
-		justify-content: space-between;
-		align-items: center;
-
-		color: #7582eb;
-	}
 }
 
 section.content {
 	flex-direction: column;
-	justify-content: space-around;
-	align-items: center;
 
-	border: 1px solid green;
-
-	.cards-totals {
+	.cards-quadros {
 		width: 100%;
 		display: flex;
 		flex-direction: row;
-		justify-content: space-between;
+		justify-content: space-evenly;
 		align-items: center;
 		flex-wrap: wrap;
 	}

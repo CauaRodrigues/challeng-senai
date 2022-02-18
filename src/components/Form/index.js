@@ -40,10 +40,11 @@ const Form = () => {
 	const [password, setPassword] = useState("");
 
 	const submit = (e) => {
+		e.preventDefault();
+
 		if (!username || !password) {
 			console.log("Preencha os campos");
 		} else {
-			e.preventDefault();
 			navigate(`/admin/${username}`);
 		}
 	};

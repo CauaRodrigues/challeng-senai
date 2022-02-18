@@ -1,6 +1,6 @@
 header.container {
 	width: 100%;
-	height: 12vh;
+	height: 15vh;
 	padding: 16px;
 
 	display: flex;
@@ -8,12 +8,13 @@ header.container {
 	align-items: center;
 	flex-direction: row;
 
-	background-color: #212736;
+	background-color: #111827;
 
 	h1 {
 		margin: 0 12px;
 		font-size: 35px;
-		font-weight: 600;
+		font-weight: 500;
+		letter-spacing: 1px;
 	}
 
 	.icons {
@@ -30,5 +31,54 @@ header.container {
 			width: 45px;
 			height: 45px;
 		}
+	}
+}
+
+.propper-profile {
+	width: 320px;
+	height: 230px;
+	padding: 12px;
+	background-color: #111827;
+	opacity: 0.95;
+	display: flex;
+	flex-direction: column;
+	border: 1px solid #2d3748;
+	border-radius: 23px;
+
+	.profile {
+		width: 100%;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: flex-start;
+		border-bottom: 1px solid #2d3748;
+		padding-bottom: 12px;
+
+		.info-account {
+			margin-left: 16px;
+
+			p.smaller {
+				margin-top: 6px;
+				font-size: 14px;
+				color: #a0aec0;
+			}
+		}
+	}
+
+	.options {
+		border-bottom: 1px solid #2d3748;
+		padding: 12px 0;
+		display: flex;
+		flex-direction: column;
+
+		p {
+			color: #edf2f7;
+			margin-left: 15px;
+		}
+	}
+
+	.logout p {
+		color: #edf2f7;
+		margin-left: 15px;
 	}
 }
