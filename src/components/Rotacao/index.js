@@ -1,90 +1,101 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import ReactApexChart from "react-apexcharts";
-import { api } from "../../service/api";
-import formatDateTime from "../../utils/formatDateTime";
+
+const chartOptions = {
+  series: [
+    {
+      name: "mm / s",
+      data: [
+        2.13, 1.23, 0.33, 0.61, 0.82, 1.54, 3.54, 4.98, 4.32, 3.21, 2.79, 3.02,
+        4, 4.76,
+      ],
+    },
+  ],
+
+  options: {
+    chart: {
+      type: "area",
+      background: "tranparent",
+      stacked: true,
+      zoom: { type: "x", enabled: true, autoScaleYaxis: true },
+      toolbar: { autoSelected: "zoom" },
+      foreColor: "#fafafa",
+    },
+    stroke: {
+      curve: "smooth",
+      colors: ["#10b981"],
+    },
+    title: {
+      text: "Velocidade da Rotação RPM",
+      align: "center",
+    },
+    subtitle: {
+      text: `+20 Registros`,
+      align: "center",
+    },
+    dataLabels: {
+      enabled: true,
+    },
+    xaxis: {
+      categories: [
+        "8/2/22 - 14:46",
+        "8/2/22 - 14:47",
+        "8/2/22 - 14:48",
+        "8/2/22 - 14:49",
+        "8/2/22 - 14:50",
+        "8/2/22 - 14:51",
+        "8/2/22 - 14:52",
+        "8/2/22 - 14:53",
+        "8/2/22 - 14:54",
+        "8/2/22 - 14:55",
+        "8/2/22 - 14:56",
+        "8/2/22 - 14:57",
+        "8/2/22 - 14:58",
+        "8/2/22 - 14:59",
+        "8/2/22 - 15:00",
+      ],
+      labels: {
+        style: {
+          colors: "#fafafa",
+        },
+      },
+    },
+    legend: {
+      position: "top",
+    },
+    grid: {
+      show: true,
+      borderColor: "#444",
+    },
+    colors: ["#10b981"],
+    yaxis: {
+      title: {
+        text: "RPM",
+      },
+    },
+    fill: {
+      type: "gradient",
+      gradient: {
+        opacityFrom: 0.6,
+        opacityTo: 0.8,
+      },
+    },
+  },
+};
 
 const Rotacao = () => {
-	const [registersNumbers, setRegistersNumbers] = useState(0);
+  return (
+    <>
+      <h1 className="rotation">Rotação</h1>
 
-	const [rotationData, setRotationData] = useState({
-		labels: {
-			categories: [],
-		},
-		series: [
-			{
-				name: "",
-				data: [],
-			},
-		],
-	});
-
-	useEffect(() => {
-		api.get("/rotations").then((response) => {
-			const myLabels = response.data.map((res) => formatDateTime(res.register));
-			const mySeries = response.data.map((res) => res.rotation);
-			setRegistersNumbers(response.data.length);
-
-			setRotationData({
-				labels: {
-					categories: myLabels,
-				},
-				series: [
-					{
-						name: "RPM",
-						data: mySeries,
-					},
-				],
-			});
-		});
-	}, []);
-
-	const options = {
-		dataLabels: {
-			enabled: false,
-		},
-		stroke: {
-			curve: "smooth",
-			colors: ["#53D8FB"],
-		},
-		title: {
-			text: "Velocidade da Rotação RPM",
-			align: "center",
-		},
-		subtitle: {
-			text: `${registersNumbers} Registros`,
-			align: "center",
-		},
-		legend: {
-			position: "top",
-			horizontalAlign: "left",
-		},
-		fill: {
-			type: "gradient",
-			gradient: {
-				opacityFrom: 0.6,
-				opacityTo: 0.8,
-			},
-		},
-		colors: ["#3777FF"],
-		yaxis: {
-			title: {
-				text: "RPM",
-			},
-		},
-	};
-
-	return (
-		<>
-			<h1>Rotação</h1>
-
-			<ReactApexChart
-				options={{ xaxis: rotationData.labels, ...options }}
-				series={rotationData.series}
-				type="area"
-				height="450"
-			/>
-		</>
-	);
+      <ReactApexChart
+        options={chartOptions.options}
+        series={chartOptions.series}
+        type="area"
+        height="450"
+      />
+    </>
+  );
 };
 
 export default Rotacao;
